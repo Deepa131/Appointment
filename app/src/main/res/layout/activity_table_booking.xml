@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profilebg"
+    tools:context=".ui.activity.TableBookingActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book a Table at Delicious Deck"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Name"
+        android:inputType="textPersonName"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etName"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Select Reservation Date"
+        android:focusable="false"
+        android:clickable="true"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPhone"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Select Reservation Time"
+        android:focusable="false"
+        android:clickable="true"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etDate"
+        android:layout_marginTop="16dp" />
+
+
+    <EditText
+        android:id="@+id/etGuests"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Number of Guests"
+        android:inputType="number"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTime"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etSpecialRequest"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="Special Request"
+        android:inputType="text"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etGuests" />
+
+    <Button
+        android:id="@+id/btnBookTable"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Confirm Booking"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/maroon"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etSpecialRequest"
+        android:padding="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

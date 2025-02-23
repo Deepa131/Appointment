@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">New Project</string>
+    <string name="terms_conditions_text">
+        <![CDATA[
+        Terms & Conditions.
+
+        1 By using Delicious Deck, you agree to follow these terms.
+        2 Orders are non-refundable once prepared.
+        3 Prices and availability are subject to change.
+        4 Customers must provide accurate contact and delivery details.
+        5 We reserve the right to cancel or refuse orders at our discretion.
+        6 Users must not engage in fraudulent activities on the platform.
+        7 We collect necessary data for order processing and customer service.
+        8 These terms may be updated at any time, with notice provided in-app.
+        ]]>
+    </string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "250662363250",
+    "firebase_url": "https://appointment-ae235-default-rtdb.firebaseio.com",
+    "project_id": "appointment-ae235",
+    "storage_bucket": "appointment-ae235.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250662363250:android:7e0939b26c3f4c269522eb",
+        "android_client_info": {
+          "package_name": "com.example.newproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ9mhppRGNWRf7yEZwK2dG0mp59XPz5dA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
