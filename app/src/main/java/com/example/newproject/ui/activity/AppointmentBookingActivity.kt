@@ -109,10 +109,10 @@ class AppointmentBookingActivity : AppCompatActivity() {
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
         val today = calendar.clone() as Calendar
-        val minDate = today.timeInMillis  // Minimum date is today
+        val minDate = today.timeInMillis
 
-        calendar.add(Calendar.DAY_OF_YEAR, 3)  // Set to 3 days ahead
-        val maxDate = calendar.timeInMillis  // Maximum date is 3 days from today
+        calendar.add(Calendar.DAY_OF_YEAR, 3)
+        val maxDate = calendar.timeInMillis
 
         val year = today.get(Calendar.YEAR)
         val month = today.get(Calendar.MONTH)
