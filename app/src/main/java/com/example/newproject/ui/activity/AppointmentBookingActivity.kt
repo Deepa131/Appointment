@@ -5,34 +5,43 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.newproject.R
-import com.example.newproject.databinding.ActivityTableBookingBinding
-import com.example.newproject.model.TableBookingModel
-import com.example.newproject.viewmodel.TableBookingViewModel
+import com.example.newproject.databinding.ActivityAppointmentBookingBinding
+import com.example.newproject.model.AppointmentBookingModel
+import com.example.newproject.repository.AppointmentBookingRepository
+import com.example.newproject.repository.AppointmentBookingRepositoryImpl
+import com.example.newproject.utils.LoadingUtils
+import com.example.newproject.viewmodel.AppointmentBookingViewModel
 import java.util.Calendar
 
 class AppointmentBookingActivity : AppCompatActivity() {
-    lateinit var binding: ActivityTableBookingBinding
-    lateinit var tableBookingViewModel: TableBookingViewModel
+    lateinit var binding: ActivityAppointmentBookingBinding
+    lateinit var appointmentBookingViewModel: AppointmentBookingViewModel
+    lateinit var loadingUtils: LoadingUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityTableBookingBinding.inflate(layoutInflater)
+        binding = ActivityAppointmentBookingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        tableBookingViewModel = ViewModelProvider(this).get(TableBookingViewModel::class.java)
+        loadingUtils = LoadingUtils(this)
 
-        // Observe the booking status to handle the response
-        tableBookingViewModel.bookingStatus.observe(this, Observer { status ->
-            if (status == "Booking confirmed!") {
-                Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
-                navigateToMyTableActivity()
-            } else {
-                Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
+        val repo = AppointmentBookingRepositoryImpl()
+        appointmentBookingViewModel = AppointmentBookingViewModel(repo)
+
+        appointmentBookingViewModel.appointmentStatus.observe(this, Observer { status ->
+            loadingUtils.dismiss()
+            Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
+
+            if (status == "Appointment confirmed!") {
+                navigateToMyAppointmentActivity()
             }
         })
 
@@ -52,15 +61,13 @@ class AppointmentBookingActivity : AppCompatActivity() {
             val phone = binding.etPhone.text.toString()
             val specialRequest = binding.etSpecialRequest.text.toString()
 
-            // Validation for empty fields
-            if (customerName.isEmpty() || date.isEmpty() || time.isEmpty() || specialRequest.isEmpty()) {
+            if (customerName.isEmpty() || date.isEmpty() || time.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields correctly.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Create a TableBookingModel object
-            val booking = TableBookingModel(
-                bookingId = "",
+            val appointment = AppointmentBookingModel(
+                appointmentId = "",
                 customerName = customerName,
                 email = email,
                 phone = phone,
@@ -69,19 +76,23 @@ class AppointmentBookingActivity : AppCompatActivity() {
                 specialRequest = specialRequest
             )
 
-            // Trigger the booking creation
-            tableBookingViewModel.createBooking(booking)
+            loadingUtils.show()
+            appointmentBookingViewModel.createAppointment(appointment)
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
     }
 
-    // Navigate to MyTableActivity after booking confirmation
-    private fun navigateToMyTableActivity() {
+    private fun navigateToMyAppointmentActivity() {
         val intent = Intent(this, MyTableActivity::class.java)
         startActivity(intent)
         finish()
     }
 
-    // Show time picker dialog to select a time
     private fun showTimePicker() {
         val calendar = Calendar.getInstance()
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
@@ -95,7 +106,6 @@ class AppointmentBookingActivity : AppCompatActivity() {
         timePickerDialog.show()
     }
 
-    // Show date picker dialog to select a date
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
         val today = calendar.clone() as Calendar

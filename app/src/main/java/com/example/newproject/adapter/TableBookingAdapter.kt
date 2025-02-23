@@ -18,7 +18,6 @@ class TableBookingAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvCustomerName: TextView = view.findViewById(R.id.tvCustomerName)
         val tvDateTime: TextView = view.findViewById(R.id.tvDateTime)
-        val tvGuests: TextView = view.findViewById(R.id.tvGuests)
         val btnedit: Button = view.findViewById(R.id.btnedittablebooking)
         val btnDelete: Button = view.findViewById(R.id.btnDelete)
     }
@@ -33,7 +32,6 @@ class TableBookingAdapter(
         val booking = bookingList[position]
         holder.tvCustomerName.text = booking.customerName
         holder.tvDateTime.text = "${booking.date} at ${booking.time}"
-        holder.tvGuests.text = "Guests: ${booking.guests}"
 
         holder.btnedit.setOnClickListener { onUpdateClick(booking) }
         holder.btnDelete.setOnClickListener { onDeleteClick(booking.bookingId) }
