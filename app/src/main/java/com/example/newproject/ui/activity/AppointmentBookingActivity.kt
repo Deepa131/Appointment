@@ -119,12 +119,11 @@ class AppointmentBookingActivity : AppCompatActivity() {
         val day = today.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(this, { _, selectedYear, selectedMonth, selectedDay ->
-            // Format and display the selected date
+
             val formattedDate = "${selectedYear}-${selectedMonth + 1}-${selectedDay}"
             binding.etDate.setText(formattedDate)
         }, year, month, day)
 
-        // Set the min and max dates
         datePickerDialog.datePicker.minDate = minDate
         datePickerDialog.datePicker.maxDate = maxDate
 
