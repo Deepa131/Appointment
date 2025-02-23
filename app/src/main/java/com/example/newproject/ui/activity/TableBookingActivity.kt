@@ -82,9 +82,6 @@ class TableBookingActivity : AppCompatActivity() {
             loadingUtils.show()
             tableBookingViewModel.createBooking(booking)
 
-
-
-
         }
 
 
