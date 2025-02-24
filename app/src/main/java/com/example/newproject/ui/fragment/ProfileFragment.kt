@@ -15,7 +15,6 @@ import com.example.newproject.ui.activity.EditProfileActivity
 import com.example.newproject.ui.activity.LoginActivity
 import com.example.newproject.ui.activity.MyAppointmentActivity
 import com.example.newproject.ui.activity.MyReviewActivity
-import com.example.newproject.ui.activity.MyTableActivity
 import com.example.newproject.viewmodel.UserViewModel
 import com.squareup.picasso.Picasso
 

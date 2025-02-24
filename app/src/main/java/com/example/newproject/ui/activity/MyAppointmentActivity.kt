@@ -13,6 +13,7 @@ import com.example.newproject.adapter.TableBookingAdapter
 import com.example.newproject.databinding.ActivityAppointmentBookingBinding
 import com.example.newproject.databinding.ActivityMyAppointmentBinding
 import com.example.newproject.databinding.ActivityMyTableBinding
+import com.example.newproject.model.AppointmentBookingModel
 import com.example.newproject.model.TableBookingModel
 import com.example.newproject.repository.AppointmentBookingRepositoryImpl
 import com.example.newproject.repository.TableBookingRepositoryImpl
@@ -62,8 +63,8 @@ class MyAppointmentActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
-        appointmentBookingViewModel.appointmentsList.observe(this) { bookings ->
-            adapter.updateList(bookings)
+        appointmentBookingViewModel.appointmentsList.observe(this) { appointments ->
+            adapter.updateList(appointments)
         }
 
         appointmentBookingViewModel.appointmentStatus.observe(this) { status ->
@@ -72,7 +73,7 @@ class MyAppointmentActivity : AppCompatActivity() {
         }
     }
 
-    private fun openUpdateDialog(booking: TableBookingModel) {
+    private fun openUpdateDialog(booking: AppointmentBookingModel) {
         val intent = Intent(this, UpdateBookingActivity::class.java)
         intent.putExtra("booking", booking)
         startActivity(intent)

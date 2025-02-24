@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Customer Name"
+            android:text="Your Name"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -23,7 +23,7 @@
             android:id="@+id/etCustomerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter customer name"
+            android:hint="Enter your name"
             android:inputType="textPersonName"
            android:background="@drawable/edittext_bg"
             android:padding="8dp"
@@ -40,7 +40,7 @@
             android:id="@+id/etCustomerEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter email"
+            android:hint="Enter your email"
             android:inputType="textPersonName"
             android:background="@drawable/edittext_bg"
             android:padding="8dp"
@@ -57,7 +57,7 @@
             android:id="@+id/etCustomerPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter phone number"
+            android:hint="Enter your phone number"
             android:inputType="text|number"
             android:background="@drawable/edittext_bg"
             android:padding="8dp"
@@ -101,25 +101,6 @@
             android:padding="8dp"
             android:layout_marginBottom="12dp"/>
 
-        <!-- Number of Guests -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Number of Guests"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/etGuests"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter number of guests"
-            android:inputType="number"
-            android:background="@drawable/edittext_bg"
-            android:padding="8dp"
-            android:layout_marginBottom="12dp"/>
-
-        <!-- Special Requests -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -137,7 +118,6 @@
             android:inputType="textMultiLine"
             android:padding="8dp" />
 
-        <!-- Update Button -->
         <Button
             android:id="@+id/btnUpdateBooking"
             android:layout_width="match_parent"

@@ -88,7 +88,7 @@ class AppointmentBookingActivity : AppCompatActivity() {
     }
 
     private fun navigateToMyAppointmentActivity() {
-        val intent = Intent(this, MyTableActivity::class.java)
+        val intent = Intent(this, MyAppointmentActivity::class.java)
         startActivity(intent)
         finish()
     }

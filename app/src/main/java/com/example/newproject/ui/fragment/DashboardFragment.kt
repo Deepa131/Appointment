@@ -10,7 +10,6 @@ import com.example.newproject.R
 import com.example.newproject.databinding.ActivityTableBookingBinding
 import com.example.newproject.databinding.FragmentDashboardBinding
 import com.example.newproject.ui.activity.AppointmentBookingActivity
-import com.example.newproject.ui.activity.TableBookingActivity
 
 class DashboardFragment : Fragment() {
 
