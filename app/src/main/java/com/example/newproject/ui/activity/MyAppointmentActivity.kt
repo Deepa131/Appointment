@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newproject.R
 import com.example.newproject.adapter.TableBookingAdapter
 import com.example.newproject.databinding.ActivityAppointmentBookingBinding
+import com.example.newproject.databinding.ActivityMyAppointmentBinding
 import com.example.newproject.databinding.ActivityMyTableBinding
 import com.example.newproject.model.TableBookingModel
 import com.example.newproject.repository.AppointmentBookingRepositoryImpl
@@ -20,14 +21,14 @@ import com.example.newproject.viewmodel.AppointmentBookingViewModel
 import com.example.newproject.viewmodel.TableBookingViewModel
 
 class MyAppointmentActivity : AppCompatActivity() {
-    lateinit var binding: ActivityAppointmentBookingBinding
+    lateinit var binding: ActivityMyAppointmentBinding
     lateinit var appointmentBookingViewModel: AppointmentBookingViewModel
     lateinit var adapter: TableBookingAdapter
     lateinit var loadingUtils: LoadingUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAppointmentBookingBinding.inflate(layoutInflater)
+        binding = ActivityMyAppointmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         loadingUtils = LoadingUtils(this)
@@ -55,7 +56,7 @@ class MyAppointmentActivity : AppCompatActivity() {
         )
 
         binding.recyclerViewTableBooking.apply {
-            var layoutManager = LinearLayoutManager(this@MyAppointmentActivity)
+            layoutManager = LinearLayoutManager(this@MyAppointmentActivity)
             adapter = this@MyAppointmentActivity.adapter
         }
     }

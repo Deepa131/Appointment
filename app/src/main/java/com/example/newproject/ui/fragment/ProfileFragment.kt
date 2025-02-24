@@ -13,9 +13,9 @@ import com.example.newproject.databinding.FragmentProfileBinding
 import com.example.newproject.repository.UserRepositoryImpl
 import com.example.newproject.ui.activity.EditProfileActivity
 import com.example.newproject.ui.activity.LoginActivity
+import com.example.newproject.ui.activity.MyAppointmentActivity
 import com.example.newproject.ui.activity.MyReviewActivity
 import com.example.newproject.ui.activity.MyTableActivity
-import com.example.newproject.ui.activity.SettingsActivity
 import com.example.newproject.viewmodel.UserViewModel
 import com.squareup.picasso.Picasso
 
@@ -34,7 +34,6 @@ class ProfileFragment : Fragment() {
         return binding.root
 
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -69,17 +68,12 @@ class ProfileFragment : Fragment() {
         })
 
         binding.myTable.setOnClickListener({
-            val intent = Intent(requireContext(), MyTableActivity::class.java)
+            val intent = Intent(requireContext(), MyAppointmentActivity::class.java)
             startActivity(intent)
         })
 
         binding.cardFavorited.setOnClickListener({
             val intent = Intent(requireContext(), MyReviewActivity::class.java)
-            startActivity(intent)
-        })
-
-        binding.cardSettings.setOnClickListener({
-            val intent = Intent(requireContext(), SettingsActivity::class.java)
             startActivity(intent)
         })
 
