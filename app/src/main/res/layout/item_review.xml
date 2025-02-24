@@ -7,7 +7,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="@color/pestal"
+        android:background="@color/light_blue"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
@@ -15,7 +15,8 @@
             android:id="@+id/emailTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:text="Email"
+            android:textColor="@color/white"/>
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -27,7 +28,8 @@
             android:id="@+id/messageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Message" />
+            android:text="Message"
+            android:textColor="@color/white"/>
 
 
         <Button
