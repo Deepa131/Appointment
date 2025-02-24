@@ -40,7 +40,6 @@ class UpdateBookingActivity : AppCompatActivity() {
         binding.etCustomerName.setText(booking.customerName)
         binding.etDate.setText(booking.date)
         binding.etTime.setText(booking.time)
-        binding.etGuests.setText(booking.guests.toString())
         binding.etCustomerEmail.setText(booking.email)
         binding.etCustomerPhone.setText(booking.phone)
 
@@ -98,7 +97,6 @@ class UpdateBookingActivity : AppCompatActivity() {
             booking.customerName = binding.etCustomerName.text.toString()
             booking.date = binding.etDate.text.toString()
             booking.time = binding.etTime.text.toString()
-            booking.guests = binding.etGuests.text.toString().toInt()
             booking.email = binding.etCustomerEmail.text.toString()
             booking.phone = binding.etCustomerPhone.text.toString()
 
