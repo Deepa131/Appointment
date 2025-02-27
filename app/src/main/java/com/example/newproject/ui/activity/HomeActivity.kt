@@ -10,9 +10,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.newproject.R
 import com.example.newproject.databinding.ActivityHomeBinding
-import com.example.newproject.databinding.ActivityLoginBinding
 import com.example.newproject.ui.fragment.DashboardFragment
-import com.example.newproject.ui.fragment.NotificationFragment
 import com.example.newproject.ui.fragment.ProfileFragment
 import com.example.newproject.ui.fragment.SearchFragment
 
@@ -39,7 +37,6 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.navHome -> replaceFragment(DashboardFragment())
                 R.id.navSearch -> replaceFragment(SearchFragment())
-                R.id.navNotification -> replaceFragment(NotificationFragment())
                 R.id.navPerson -> replaceFragment(ProfileFragment())
                 else -> {}
             }
