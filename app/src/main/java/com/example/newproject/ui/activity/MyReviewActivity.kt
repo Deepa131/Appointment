@@ -63,14 +63,14 @@ class MyReviewActivity : AppCompatActivity() {
     private fun loadReviews() {
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                reviewList.clear() // Clear existing reviews
+                reviewList.clear()
                 for (reviewSnapshot in snapshot.children) {
                     val review = reviewSnapshot.getValue(ReviewModel::class.java)
                     review?.let {
-                        reviewList.add(it) // Add review to the list
+                        reviewList.add(it)
                     }
                 }
-                reviewAdapter.notifyDataSetChanged() // Notify adapter to refresh the data
+                reviewAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
