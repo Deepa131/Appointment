@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newproject.R
 import com.example.newproject.model.AppointmentBookingModel
-import com.example.newproject.model.TableBookingModel
 
 class TableBookingAdapter(
     private var bookingList: List<AppointmentBookingModel>,

@@ -10,16 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.newproject.databinding.ActivityUpdateBookingBinding
-import com.example.newproject.model.TableBookingModel
-import com.example.newproject.repository.TableBookingRepositoryImpl
-import com.example.newproject.viewmodel.TableBookingViewModel
+import com.example.newproject.model.AppointmentBookingModel
+import com.example.newproject.repository.AppointmentBookingRepositoryImpl
+import com.example.newproject.viewmodel.AppointmentBookingViewModel
 import java.util.Calendar
 
 class UpdateBookingActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityUpdateBookingBinding
-    lateinit var  tableBookingViewModel: TableBookingViewModel
-    lateinit var booking: TableBookingModel
+    lateinit var  appointmentBookingViewModel: AppointmentBookingViewModel
+    lateinit var booking: AppointmentBookingModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +27,10 @@ class UpdateBookingActivity : AppCompatActivity() {
         binding = ActivityUpdateBookingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val repo = TableBookingRepositoryImpl()
-        tableBookingViewModel = TableBookingViewModel(repo)
+        val repo = AppointmentBookingRepositoryImpl()
+        appointmentBookingViewModel = AppointmentBookingViewModel(repo)
 
-        val booking: TableBookingModel? = intent.getParcelableExtra("booking")
+        val booking: AppointmentBookingModel? = intent.getParcelableExtra("booking")
         if (booking == null) {
             Toast.makeText(this, "Booking data is missing", Toast.LENGTH_SHORT).show()
             finish()
@@ -100,7 +100,7 @@ class UpdateBookingActivity : AppCompatActivity() {
             booking.email = binding.etCustomerEmail.text.toString()
             booking.phone = binding.etCustomerPhone.text.toString()
 
-            tableBookingViewModel.updateBooking(booking)
+            appointmentBookingViewModel.updateAppointment(booking)
             Toast.makeText(this, "Booking updated!", Toast.LENGTH_SHORT).show()
             finish()
         }

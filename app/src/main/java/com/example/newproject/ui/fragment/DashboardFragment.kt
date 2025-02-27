@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.newproject.R
-import com.example.newproject.databinding.ActivityTableBookingBinding
 import com.example.newproject.databinding.FragmentDashboardBinding
 import com.example.newproject.ui.activity.AppointmentBookingActivity
 

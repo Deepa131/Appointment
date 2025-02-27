@@ -12,14 +12,10 @@ import com.example.newproject.R
 import com.example.newproject.adapter.TableBookingAdapter
 import com.example.newproject.databinding.ActivityAppointmentBookingBinding
 import com.example.newproject.databinding.ActivityMyAppointmentBinding
-import com.example.newproject.databinding.ActivityMyTableBinding
 import com.example.newproject.model.AppointmentBookingModel
-import com.example.newproject.model.TableBookingModel
 import com.example.newproject.repository.AppointmentBookingRepositoryImpl
-import com.example.newproject.repository.TableBookingRepositoryImpl
 import com.example.newproject.utils.LoadingUtils
 import com.example.newproject.viewmodel.AppointmentBookingViewModel
-import com.example.newproject.viewmodel.TableBookingViewModel
 
 class MyAppointmentActivity : AppCompatActivity() {
     lateinit var binding: ActivityMyAppointmentBinding
