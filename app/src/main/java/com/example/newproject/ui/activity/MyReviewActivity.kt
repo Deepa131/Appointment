@@ -38,7 +38,7 @@ class MyReviewActivity : AppCompatActivity() {
             deleteReview(reviewId)
         }, onEditClick = { review ->
             val intent = Intent(this, UpdateReviewActivity::class.java).apply {
-                putExtra("review", review) // Passing ReviewModel as Parcelable
+                putExtra("review", review)
             }
             startActivity(intent)
         })

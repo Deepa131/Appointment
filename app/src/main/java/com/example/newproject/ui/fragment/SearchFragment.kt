@@ -29,7 +29,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        return binding.root // Return the root view of the binding
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -72,12 +72,11 @@ class SearchFragment : Fragment() {
     private fun navigateToMyReviews() {
         val intent = Intent(requireContext(), MyReviewActivity::class.java)
         startActivity(intent)
-        requireActivity().finish() // Close the current fragment
+        requireActivity().finish()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Nullify the binding to avoid memory leaks
         _binding = null
     }
 }

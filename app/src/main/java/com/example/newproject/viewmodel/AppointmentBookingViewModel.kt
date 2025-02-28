@@ -47,17 +47,14 @@ class AppointmentBookingViewModel(private val repository: AppointmentBookingRepo
     fun deleteAppointment(appointmentId: String) {
         repository.deleteAppointment(appointmentId, database) { success, error ->
             if (success) {
-                // Remove the deleted appointment from the current appointments list
                 val currentList = appointmentsList.value?.toMutableList() ?: mutableListOf()
                 val appointmentToRemove = currentList.find { it.appointmentId == appointmentId }
                 if (appointmentToRemove != null) {
-                    currentList.remove(appointmentToRemove)  // Remove the appointment from the list
+                    currentList.remove(appointmentToRemove)
                 }
 
-                // Update the LiveData with the modified list
                 appointmentsList.postValue(currentList)
 
-                // Notify that the appointment was deleted
                 appointmentStatus.postValue("Appointment deleted successfully!")
             } else {
                 appointmentStatus.postValue("Error: $error")

@@ -45,7 +45,7 @@ class ProfileFragment : Fragment() {
             userViewModel.getUserFromDatabase(it?.uid.toString())
         }
 
-        userViewModel.userData.observe(requireActivity()){users-> //can use it in place of variable"users"
+        userViewModel.userData.observe(requireActivity()){users->
             binding.profileEmail.setText(users?.email)
             binding.profileName.text = users?.firstName + " " +users?.lastName
 
