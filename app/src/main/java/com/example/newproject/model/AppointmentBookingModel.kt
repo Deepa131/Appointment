@@ -10,9 +10,7 @@ data class AppointmentBookingModel(
     var phone: String = "",
     var date: String = "",
     var time: String = "",
-    var serviceType: String = "",
     var specialRequest: String? = null,
-    var appointmentStatus: String = "Pending"
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
@@ -22,8 +20,6 @@ data class AppointmentBookingModel(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
-        parcel.readString(),
-        parcel.readString() ?: "Pending"
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -33,9 +29,7 @@ data class AppointmentBookingModel(
         parcel.writeString(phone)
         parcel.writeString(date)
         parcel.writeString(time)
-        parcel.writeString(serviceType)
         parcel.writeString(specialRequest)
-        parcel.writeString(appointmentStatus)
     }
 
     override fun describeContents(): Int {

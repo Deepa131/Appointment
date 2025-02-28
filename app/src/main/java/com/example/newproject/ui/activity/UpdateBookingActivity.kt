@@ -42,6 +42,7 @@ class UpdateBookingActivity : AppCompatActivity() {
         binding.etTime.setText(booking.time)
         binding.etCustomerEmail.setText(booking.email)
         binding.etCustomerPhone.setText(booking.phone)
+        binding.etCustomerSpecialRequest.setText(booking.specialRequest)
 
         binding.etDate.setOnClickListener {
             val calendar = Calendar.getInstance()
@@ -99,6 +100,7 @@ class UpdateBookingActivity : AppCompatActivity() {
             booking.time = binding.etTime.text.toString()
             booking.email = binding.etCustomerEmail.text.toString()
             booking.phone = binding.etCustomerPhone.text.toString()
+            booking.specialRequest = binding.etCustomerSpecialRequest.text.toString()
 
             appointmentBookingViewModel.updateAppointment(booking)
             Toast.makeText(this, "Booking updated!", Toast.LENGTH_SHORT).show()
