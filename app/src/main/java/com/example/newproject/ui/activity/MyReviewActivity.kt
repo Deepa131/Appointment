@@ -37,7 +37,6 @@ class MyReviewActivity : AppCompatActivity() {
         reviewAdapter = ReviewAdapter(reviews = reviewList, onDeleteClick = { reviewId ->
             deleteReview(reviewId)
         }, onEditClick = { review ->
-            // When the edit button is clicked, navigate to UpdateReviewActivity with review data
             val intent = Intent(this, UpdateReviewActivity::class.java).apply {
                 putExtra("review", review) // Passing ReviewModel as Parcelable
             }
@@ -46,13 +45,10 @@ class MyReviewActivity : AppCompatActivity() {
 
         recyclerView.adapter = reviewAdapter
 
-        // Firebase Database setup
         database = FirebaseDatabase.getInstance().getReference("reviews")
 
-        // Load reviews
         loadReviews()
 
-        // Edge-to-edge and window insets handling
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

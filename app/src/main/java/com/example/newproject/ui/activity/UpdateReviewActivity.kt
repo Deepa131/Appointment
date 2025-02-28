@@ -42,7 +42,7 @@ class UpdateReviewActivity : AppCompatActivity() {
         val updatedRating = binding.ratingBar.rating
         val updatedMessage = binding.contentEditText1.text.toString()
 
-        // Create an updated review object
+
         val updatedReview = mapOf(
             "email" to updatedEmail,
             "rating" to updatedRating,
@@ -54,7 +54,7 @@ class UpdateReviewActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     loadingUtils.dismiss()
                     Toast.makeText(this, "Review updated successfully!", Toast.LENGTH_SHORT).show()
-                    finish() // Close activity after update
+                    finish()
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Failed to update review.", Toast.LENGTH_SHORT).show()
