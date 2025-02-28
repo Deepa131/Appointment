@@ -19,7 +19,7 @@ class UpdateBookingActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityUpdateBookingBinding
     lateinit var  appointmentBookingViewModel: AppointmentBookingViewModel
-    lateinit var booking: AppointmentBookingModel
+    lateinit var appointmentBookingModel: AppointmentBookingModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
